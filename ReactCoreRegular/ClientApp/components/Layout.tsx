@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Flex, Box } from 'grid-styled';
 import { NavMenu } from './NavMenu';
 
 export interface LayoutProps {
@@ -7,15 +8,21 @@ export interface LayoutProps {
 
 export class Layout extends React.Component<LayoutProps, {}> {
     public render() {
-        return <div className='container-fluid'>
-            <div className='row'>
-                <div className='col-sm-3'>
+        return <Flex>
+            <Flex row width='100%' height='100%'>
+
+                <Box column width={1 / 3} px={3}>
+
                     <NavMenu />
-                </div>
-                <div className='col-sm-9'>
-                    { this.props.children }
-                </div>
-            </div>
-        </div>;
+
+                </Box>
+
+                <Box column width={2 / 3} px={3}>
+
+                    {this.props.children}
+
+                </Box>
+            </Flex>
+        </Flex>;
     }
 }
