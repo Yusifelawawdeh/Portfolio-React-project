@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Paper from "material-ui/Paper";
 import { Flex, Box } from 'grid-styled';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 
 
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
-        return <Paper zDepth={3} className="paper-navigation" style={{ minWidth: '300px',}}>
+        return <Paper zDepth={3} className="paper-navigation">
                     <div className='navbar navbar-inverse'>
                         <div className='clearfix'></div>
                         <div className='navbar-collapse collapse'>

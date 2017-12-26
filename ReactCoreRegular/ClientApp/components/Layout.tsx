@@ -10,15 +10,14 @@ export interface LayoutProps {
 export class Layout extends React.Component<LayoutProps, {}> {
     public render() {
         return <MuiThemeProvider>
-            <Flex wrap row height='100%'>
+            <Flex wrap>
 
-                <Box width={1/3}>
+                <Box width={[1, 1/4]}>
 
                     <NavMenu />
 
                 </Box>
-
-                <Box width={2/3}>
+                <Box width={[1, 3/4]}>
 
                     {this.props.children}
 
