@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Flex, Box } from 'grid-styled';
 import { NavMenu } from './NavMenu';
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 export interface LayoutProps {
     children?: React.ReactNode;
@@ -8,21 +9,21 @@ export interface LayoutProps {
 
 export class Layout extends React.Component<LayoutProps, {}> {
     public render() {
-        return <Flex>
-            <Flex row width='100%' height='100%'>
+        return <MuiThemeProvider>
+            <Flex wrap row height='100%'>
 
-                <Box column width={1 / 3} px={3}>
+                <Box width={1/3}>
 
                     <NavMenu />
 
                 </Box>
 
-                <Box column width={2 / 3} px={3}>
+                <Box width={2/3}>
 
                     {this.props.children}
 
                 </Box>
             </Flex>
-        </Flex>;
+        </MuiThemeProvider>;
     }
 }
